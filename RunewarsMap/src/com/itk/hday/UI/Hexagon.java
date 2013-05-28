@@ -1,12 +1,15 @@
 package com.itk.hday.UI;
 
 
+import android.app.Activity;
 import android.graphics.Paint;
+import android.widget.ImageView;
 
+import com.itk.hday.R;
 import com.itk.hday.runewarsmaps.grid.Coordinates;
 
 
-public class Hexagon {
+public class Hexagon extends Activity{
 	
 	private Coordinates _coordonates;
 	private int _size;
@@ -32,14 +35,15 @@ public class Hexagon {
 		return _size;
 	}
 
-
 	public void set_size(int _size) {
 		if(_size > 0 ) this._size = _size;
 	}
 	
 	public void draw(){
-		Paint paint = new Paint();
-		paint.setStyle(Paint.Style.FILL);
+		/*setContentView(R.layout.runwars_gameboard);
+		ImageView tuile = (ImageView) findViewById(R.id.tuile1);
+		tuile.setImageResource(R.drawable.tuiles_1);*/
+
 	}
 
 }
