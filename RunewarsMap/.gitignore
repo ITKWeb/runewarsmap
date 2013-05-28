@@ -1,4 +1,5 @@
 .project
+project.properties
 bin
 gen
 .classpath
