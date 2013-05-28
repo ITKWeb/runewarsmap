@@ -1,45 +1,70 @@
 package com.itk.hday.UI;
 
 
-import android.graphics.Paint;
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 
+import com.itk.hday.R;
 import com.itk.hday.runewarsmaps.grid.Coordinates;
 
 
-public class Hexagon {
+@SuppressLint("NewApi") public class Hexagon extends Activity{
 	
-	private Coordinates _coordonates;
-	private int _size;
+	private Coordinates _coordonatesScreen;
 	
 	
-	public Hexagon(int x, int y, int size) {
+	public Hexagon(int x, int y) {
 		set_coordonates(new Coordinates(x, y));
-		set_size(size);
 	}
 
 
 	public Coordinates get_coordonates() {
-		return _coordonates;
+		return _coordonatesScreen;
 	}
 
 
 	public void set_coordonates(Coordinates _coordonates) {
-		this._coordonates = _coordonates;
+		this._coordonatesScreen = _coordonates;
 	}
-
-
-	public int get_size() {
-		return _size;
-	}
-
-
-	public void set_size(int _size) {
-		if(_size > 0 ) this._size = _size;
+	
+	public void firstDraw(){
+		setContentView(R.layout.runwars_gameboard);
+		ImageView tuile = new ImageView(Hexagon.this);
+		tuile.setX(100);
+		tuile.setY(100);
+		tuile.getLayoutParams().height = 20;
+		tuile.getLayoutParams().width = 20;
+		tuile.setImageResource(R.drawable.tuiles_1a);
+		FrameLayout frameLayout = (FrameLayout)findViewById(R.id.gameboard);
+		frameLayout.addView(tuile);
 	}
 	
 	public void draw(){
-		Paint paint = new Paint();
-		paint.setStyle(Paint.Style.FILL);
+		setContentView(R.layout.runwars_gameboard);
+		ImageView tuile = new ImageView(Hexagon.this);
+		tuile.setX(_coordonates.getFirst());
+		tuile.setY(_coordonates.getSecond());
+		tuile.getLayoutParams().height = 20;
+		tuile.getLayoutParams().width = 20;
+		tuile.setImageResource(R.drawable.tuiles_1b);
+		FrameLayout frameLayout = (FrameLayout)findViewById(R.id.gameboard);
+		frameLayout.addView(tuile);
+	}
+	
+	public Coordinates tuilePosition(Hexagon tuileDepart, int x, int y){
+		
+		Coordinates coordonatesOnScreen;
+		float xscreen = tuileDepart._coordonatesScreen.getFirst();
+		float yscreen = tuileDepart._coordonatesScreen.getSecond();
+		if((x == 1) && (y == 1)){
+			yscreen	= tuileDepart._coordonatesScreen.getSecond() + 20;
+		}
+		coordonatesOnScreen.setFirst(xscreen);
+		coordonatesOnScreen.setSecond(yscreen);
+		return coordonatesOnScreen;
+		
 	}
 
 }

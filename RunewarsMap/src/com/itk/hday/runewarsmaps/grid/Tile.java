@@ -7,8 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.itk.hday.runewars.RWTile;
-import com.itk.hday.runewars.RWTilesSet;
-
 
 /**
  * @author marc
@@ -21,6 +19,10 @@ public class Tile {
 
 	public Tile(int i, int j) {
 		setCoordinates(i, j);
+	}
+
+	public Tile(Coordinates coord) {
+		setCoordinates(coord);
 	}
 
 	public void setCoordinates(int i, int j) {
@@ -57,11 +59,6 @@ public class Tile {
 		nCoordinates.add(new Coordinates(getCoordinates().getFirst() - 1,
 				getCoordinates().getSecond()));
 		return nCoordinates;
-	}
-
-	public void setTileSet(RWTilesSet rwTilesSet) {
-		setRwTile(rwTilesSet.getFirstTile());
-
 	}
 
 	public String toString() {

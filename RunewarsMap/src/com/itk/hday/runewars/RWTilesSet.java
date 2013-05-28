@@ -3,7 +3,6 @@
  */
 package com.itk.hday.runewars;
 
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -46,17 +45,17 @@ public class RWTilesSet {
 		firstTile.setRelativeCoordinates(new Coordinates(0, 0));
 		ConcurrentLinkedQueue<RWTile> queue = new ConcurrentLinkedQueue<RWTile>();
 		queue.add(firstTile);
-		Iterator<RWTile> ite = queue.iterator();
-		while (ite.hasNext()) {
-			RWTile tile = ite.next();
-			for (Entry<Orientation, RWTile> neighbor : tile.getNeighbors()
+		RWTile rwTile = queue.poll();
+		while (rwTile != null) {
+			for (Entry<Orientation, RWTile> neighbor : rwTile.getNeighbors()
 					.entrySet()) {
 				if (neighbor.getValue().getRelativeCoordinates() == null) {
 					neighbor.getValue().setRelativeCoordinates(
-							tile.findRelativeCoordinates(neighbor.getKey()));
+							rwTile.findRelativeCoordinates(neighbor.getKey()));
 					queue.add(neighbor.getValue());
 				}
 			}
+			rwTile = queue.poll();
 
 		}
 
