@@ -27,7 +27,7 @@
         <Spinner
             android:id="@+id/nbPlayerSpinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" />this.requestWindowFeature(Window.FEATURE_NO_TITLE);this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         <Button
             android:id="@+id/validateConfigButton"

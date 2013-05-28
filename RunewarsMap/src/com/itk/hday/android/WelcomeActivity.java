@@ -25,13 +25,15 @@ public class WelcomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		
-//		Spinner spinner = (Spinner) findViewById(R.id.nbPlayerSpinner);
-//		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, 
-//				R.array.nbPlayerStringArray, 
-//				android.R.layout.simple_spinner_item);
-//		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-//		spinner.setAdapter(adapter);
 		setContentView(R.layout.activity_welcome);
+		
+		final Spinner spinner = (Spinner) findViewById(R.id.nbPlayerSpinner);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, 
+				R.array.nbPlayerStringArray, 
+				android.R.layout.simple_spinner_item);
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spinner.setAdapter(adapter);
+		
 		
 		final Button button = (Button) findViewById(R.id.validateConfigButton);
 		button.setOnClickListener(new View.OnClickListener() {
