@@ -1,16 +1,18 @@
 package com.itk.hday.UI;
 
 
+import android.graphics.Paint;
+
 import com.itk.hday.runewarsmaps.grid.Coordinates;
 
 
-public class Heaxgon {
+public class Hexagon {
 	
 	private Coordinates _coordonates;
 	private int _size;
 	
 	
-	public Heaxgon(int x, int y, int size) {
+	public Hexagon(int x, int y, int size) {
 		set_coordonates(new Coordinates(x, y));
 		set_size(size);
 	}
@@ -33,6 +35,11 @@ public class Heaxgon {
 
 	public void set_size(int _size) {
 		if(_size > 0 ) this._size = _size;
+	}
+	
+	public void draw(){
+		Paint paint = new Paint();
+		paint.setStyle(Paint.Style.FILL);
 	}
 
 }
