@@ -31,6 +31,16 @@ public final class RWTilesSets {
 				1,
 				RWTilesSetsFactory.getInstance().buildTilesSet(1, 3,
 						"A:B:SUD_EST,A:C:SUD,B:C:SUD_OUEST"));
+
+		tilesSets.put(
+				2,
+				RWTilesSetsFactory.getInstance().buildTilesSet(2, 3,
+						"A:B:SUD,B:C:SUD_EST"));
+
+		tilesSets
+				.put(9,
+						RWTilesSetsFactory.getInstance().buildTilesSet(2, 2,
+								"A:B:SUD"));
 	}
 
 	public static Collection<RWTilesSet> getAllTilesSets() {
