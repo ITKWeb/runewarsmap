@@ -17,16 +17,18 @@ import com.itk.hday.runewarsmaps.grid.Coordinates;
 public class RWTile {
 
 	public enum Orientation {
-		NORD, SUD, NORD_OUEST, NORD_EST, SUD_EST, SUD_OUEST
+		NORD, NORD_EST, SUD_EST, SUD, SUD_OUEST, NORD_OUEST
 	}
 
 	private char tileRef;
 	private RWTilesSet rwTilesSet;
-	private Map<Orientation, RWTile> neighbors = new HashMap<Orientation, RWTile>();
+	private Map<Orientation, RWTile> neighbors = new HashMap<RWTile.Orientation, RWTile>();
 	private Coordinates relativeCoordinates;
+	private static Map<Orientation, Orientation> nextOrientations;
 
 	public RWTile(char letter) {
 		setTileRef(letter);
+
 	}
 
 	public RWTile getNeighbor(Orientation orientation) {
@@ -79,6 +81,16 @@ public class RWTile {
 		default:
 			return null;
 		}
+	}
+
+	public void rotate(int nbRotations) {
+		Map<Orientation, RWTile> newneighbors = new HashMap<RWTile.Orientation, RWTile>();
+		for (Entry<Orientation, RWTile> neighbor : getNeighbors().entrySet()) {
+			newneighbors
+					.put(getOrientationAfterRotating(neighbor.getKey(),
+							nbRotations), neighbor.getValue());
+		}
+		setNeighbors(newneighbors);
 	}
 
 	protected void setNeighbor(RWTile rwTile, Orientation orientation) {
@@ -146,6 +158,42 @@ public class RWTile {
 	 */
 	protected void setRelativeCoordinates(Coordinates relativeCoordinates) {
 		this.relativeCoordinates = relativeCoordinates;
+	}
+
+	public static Orientation getOrientationAfterRotating(
+			Orientation originalOrientation, int nbRotation) {
+		return getOrientationAfterRotating(originalOrientation, nbRotation,
+				true);
+	}
+
+	public static Orientation getOrientationAfterRotating(
+			Orientation originalOrientation, int nbRotation, boolean clockwise) {
+		nbRotation = nbRotation % 6;
+		if (!clockwise) {
+			nbRotation = 6 - nbRotation;
+		}
+		Orientation orientation = originalOrientation;
+		for (int i = 0; i < nbRotation; i++) {
+			orientation = getNextOrientations().get(orientation);
+		}
+		return orientation;
+	}
+
+	public static Map<Orientation, Orientation> getNextOrientations() {
+		if (nextOrientations == null) {
+			nextOrientations = new HashMap<Orientation, Orientation>();
+			nextOrientations.put(Orientation.NORD, Orientation.NORD_EST);
+			nextOrientations.put(Orientation.NORD_EST, Orientation.SUD_EST);
+			nextOrientations.put(Orientation.SUD_EST, Orientation.SUD);
+			nextOrientations.put(Orientation.SUD, Orientation.SUD_OUEST);
+			nextOrientations.put(Orientation.SUD_OUEST, Orientation.NORD_OUEST);
+			nextOrientations.put(Orientation.NORD_OUEST, Orientation.NORD);
+		}
+		return nextOrientations;
+	}
+
+	public void setNeighbors(Map<Orientation, RWTile> neighbors) {
+		this.neighbors = neighbors;
 	}
 
 }
