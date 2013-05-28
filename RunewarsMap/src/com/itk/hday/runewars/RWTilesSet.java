@@ -19,6 +19,7 @@ public class RWTilesSet {
 
 	private int reference;
 	private Map<Character, RWTile> rWTiles;
+	private Orientation orientation;
 
 	public RWTilesSet(int reference, Map<Character, RWTile> tilesMap) {
 		setReference(reference);
@@ -27,9 +28,20 @@ public class RWTilesSet {
 			rwtile.setRWTilesSet(this);
 		}
 		updateRelativeCoordinates();
+		setOrientation(Orientation.NORD);
+	}
+
+	public void rotate(int nbRotations) {
+		for (RWTile tile : getRWTiles().values()) {
+			tile.rotate(nbRotations);
+		}
+		updateRelativeCoordinates();
 	}
 
 	protected void updateRelativeCoordinates() {
+		for (RWTile tile : getRWTiles().values()) {
+			tile.setRelativeCoordinates(null);
+		}
 		RWTile firstTile = getFirstTile();
 		firstTile.setRelativeCoordinates(new Coordinates(0, 0));
 		ConcurrentLinkedQueue<RWTile> queue = new ConcurrentLinkedQueue<RWTile>();
@@ -80,6 +92,14 @@ public class RWTilesSet {
 
 	public RWTile getFirstTile() {
 		return getRWTiles().get('A');
+	}
+
+	public Orientation getOrientation() {
+		return orientation;
+	}
+
+	public void setOrientation(Orientation orientation) {
+		this.orientation = orientation;
 	}
 
 }

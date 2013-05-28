@@ -43,7 +43,8 @@ public final class RWTilesSetsFactory {
 		return tilesSet;
 	}
 
-	protected void addLink(Map<Character, RWTile> tilesMap, String link) throws Exception {
+	protected void addLink(Map<Character, RWTile> tilesMap, String link)
+			throws Exception {
 		try {
 			String[] linkElements = link.split(":");
 			char first = linkElements[0].charAt(0);
@@ -67,7 +68,7 @@ public final class RWTilesSetsFactory {
 		char letter = 'A';
 		for (int i = 0; i < nbTiles; i++) {
 			RWTile tile = new RWTile(letter);
-			tilesMap.put(new Character(letter), tile);
+			tilesMap.put(Character.valueOf(letter), tile);
 
 			letter++;
 		}
