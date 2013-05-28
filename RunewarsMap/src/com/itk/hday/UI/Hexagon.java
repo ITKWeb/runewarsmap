@@ -29,7 +29,7 @@ import com.itk.hday.runewarsmaps.grid.Coordinates;
 		this._coordonatesScreen = _coordonates;
 	}
 	
-	public void firstDraw(){
+	/*public void firstDraw(){
 		setContentView(R.layout.runwars_gameboard);
 		ImageView tuile = new ImageView(Hexagon.this);
 		tuile.setX(100);
@@ -39,32 +39,32 @@ import com.itk.hday.runewarsmaps.grid.Coordinates;
 		tuile.setImageResource(R.drawable.tuiles_1a);
 		FrameLayout frameLayout = (FrameLayout)findViewById(R.id.gameboard);
 		frameLayout.addView(tuile);
-	}
+	}*/
 	
 	public void draw(){
 		setContentView(R.layout.runwars_gameboard);
 		ImageView tuile = new ImageView(Hexagon.this);
-		tuile.setX(_coordonates.getFirst());
-		tuile.setY(_coordonates.getSecond());
-		tuile.getLayoutParams().height = 20;
-		tuile.getLayoutParams().width = 20;
+		tuile.setX(_coordonatesScreen.getFirst());
+		tuile.setY(_coordonatesScreen.getSecond());
+		tuile.getLayoutParams().height = 100;
+		tuile.getLayoutParams().width = 100;
 		tuile.setImageResource(R.drawable.tuiles_1b);
 		FrameLayout frameLayout = (FrameLayout)findViewById(R.id.gameboard);
 		frameLayout.addView(tuile);
 	}
 	
-	public Coordinates tuilePosition(Hexagon tuileDepart, int x, int y){
+	/*public Coordinates tuilePosition(Hexagon tuileDepart, int x, int y){
 		
 		Coordinates coordonatesOnScreen;
 		float xscreen = tuileDepart._coordonatesScreen.getFirst();
 		float yscreen = tuileDepart._coordonatesScreen.getSecond();
 		if((x == 1) && (y == 1)){
-			yscreen	= tuileDepart._coordonatesScreen.getSecond() + 20;
+			yscreen	= tuileDepart._coordonatesScreen.getSecond() + 100;
 		}
 		coordonatesOnScreen.setFirst(xscreen);
 		coordonatesOnScreen.setSecond(yscreen);
 		return coordonatesOnScreen;
 		
-	}
+	}*/
 
 }
