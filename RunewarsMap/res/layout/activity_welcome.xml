@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="@drawable/fond_ecran_rectangle_raccordable"
-    android:tileMode="repeat"
     tools:context=".WelcomeActivity" >
 
     <!--
@@ -13,46 +13,54 @@
     -->
 
     <LinearLayout
+        android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" 
-        android:id="@+id/fullscreen_content">
+        android:layout_gravity="center"
+        android:orientation="vertical" >
 
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:scaleType="centerInside"
-            android:src="@drawable/bandeau" />
+            android:src="@drawable/bandeau" 
+            android:tileMode="repeat"/>
 
         <TextView
             android:id="@+id/nbPlayerLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/nb_player_label"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <Spinner
             android:id="@+id/nbPlayerSpinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
 
         <CheckBox
             android:id="@+id/useExtension"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/use_extension" />
         
         <CheckBox
             android:id="@+id/choose_tiles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/choose_tiles" />
 
         <Button
             android:id="@+id/validateConfigButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="@string/validate_config" />
 
     </LinearLayout>
