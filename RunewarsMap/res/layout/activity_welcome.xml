@@ -16,8 +16,8 @@
         android:id="@+id/fullscreen_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:tileMode="repeat" >
 
         <ImageView
             android:id="@+id/imageView1"
