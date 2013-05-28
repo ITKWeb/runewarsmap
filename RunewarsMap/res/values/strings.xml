@@ -4,5 +4,8 @@
     <string name="app_name">Runewars Map</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="nb_joueur_label">Nombre de joueurs</string>
+    <string name="validate_config">OK</string>
 
+    
 </resources>
