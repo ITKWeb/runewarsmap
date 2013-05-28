@@ -18,11 +18,16 @@
         android:id="@+id/fullscreen_content">
 
         <TextView
-            android:id="@+id/nbJoueurLabel"
+            android:id="@+id/nbPlayerLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nb_joueur_label"
+            android:text="@string/nb_player_label"
             android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Spinner
+            android:id="@+id/nbPlayerSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/validateConfigButton"
