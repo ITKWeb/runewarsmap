@@ -13,5 +13,7 @@
     </string-array>
     <string name="twoPlayers">Deux joueurs</string>
     <string name="threePlayers">Trois joueurs</string>
-    <string name="fourPlayers">Quatre joueurs</string> 
+    <string name="fourPlayers">Quatre joueurs</string>
+    <string name="use_extension">Jouer avec l\'extension</string>
+    <string name="choose_tiles">Choisir les tuiles du plateau</string> 
 </resources>
