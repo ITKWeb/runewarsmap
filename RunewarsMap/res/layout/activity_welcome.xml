@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="@drawable/ic_launcher"
     tools:context=".WelcomeActivity" >
 
     <!--
@@ -27,8 +27,7 @@
         <Spinner
             android:id="@+id/nbPlayerSpinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />this.requestWindowFeature(Window.FEATURE_NO_TITLE);this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-
+            android:layout_height="wrap_content" />
         <Button
             android:id="@+id/validateConfigButton"
             android:layout_width="wrap_content"

@@ -34,7 +34,6 @@ public class WelcomeActivity extends Activity {
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);
 		
-		
 		final Button button = (Button) findViewById(R.id.validateConfigButton);
 		button.setOnClickListener(new View.OnClickListener() {
 			
