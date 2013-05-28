@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#0099cc"
+    android:background="@drawable/fond_ecran_rectangle_raccordable"
+    android:tileMode="repeat"
     tools:context=".WelcomeActivity" >
 
     <!--
@@ -17,12 +18,36 @@
         android:orientation="vertical" 
         android:id="@+id/fullscreen_content">
 
-        <TextView
-            android:id="@+id/nbJoueurLabel"
+        <ImageView
+            android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/nb_joueur_label"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:scaleType="centerInside"
+            android:src="@drawable/bandeau" />
+
+        <TextView
+            android:id="@+id/nbPlayerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nb_player_label"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Spinner
+            android:id="@+id/nbPlayerSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <CheckBox
+            android:id="@+id/useExtension"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/use_extension" />
+        
+        <CheckBox
+            android:id="@+id/choose_tiles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_tiles" />
 
         <Button
             android:id="@+id/validateConfigButton"

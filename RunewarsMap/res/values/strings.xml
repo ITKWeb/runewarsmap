@@ -4,8 +4,16 @@
     <string name="app_name">Runewars Map</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="nb_joueur_label">Nombre de joueurs</string>
+    <string name="nb_player_label">Nombre de joueurs</string>
     <string name="validate_config">OK</string>
-
-    
+    <string-array name="nbPlayerStringArray">
+        <item >@string/twoPlayers</item>
+        <item >@string/threePlayers</item>
+        <item >@string/fourPlayers</item>      
+    </string-array>
+    <string name="twoPlayers">Deux joueurs</string>
+    <string name="threePlayers">Trois joueurs</string>
+    <string name="fourPlayers">Quatre joueurs</string>
+    <string name="use_extension">Jouer avec l\'extension</string>
+    <string name="choose_tiles">Choisir les tuiles du plateau</string> 
 </resources>
