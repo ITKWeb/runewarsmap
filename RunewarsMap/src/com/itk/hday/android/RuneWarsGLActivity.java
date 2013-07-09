@@ -22,24 +22,21 @@ public class RuneWarsGLActivity extends Activity {
 		// as the ContentView for this Activity
 		if (hasGLES20()) {
 			mGLView = new MyGLSurfaceView(this);
-			mGLView.setPreserveEGLContextOnPause(true);
-			
-			 
-			
+	//		mGLView.setPreserveEGLContextOnPause(true);
+
 		} else {
 			// Time to get a new phone, OpenGL ES 2.0 not
 			// supported.
-			 new AlertDialog.Builder(this)
-			 .setTitle("OpenGL ES 2.0")
-			 .setMessage("OpenGL ES 2.0 Not Supported")
-			 .setNeutralButton("Ok",
-			 new DialogInterface.OnClickListener() {
-			 public void onClick(DialogInterface dialog,
-			 int which) {
-			 // continue with delete
-			 }
-			 })
-			 .show();
+			new AlertDialog.Builder(this)
+					.setTitle("OpenGL ES 2.0")
+					.setMessage("OpenGL ES 2.0 Not Supported")
+					.setNeutralButton("Ok",
+							new DialogInterface.OnClickListener() {
+								public void onClick(DialogInterface dialog,
+										int which) {
+									// continue with delete
+								}
+							}).show();
 		}
 
 		setContentView(mGLView);

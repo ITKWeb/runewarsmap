@@ -16,6 +16,7 @@ import com.itk.hday.runewarsmaps.grid.Grid;
 public class MapGenerator {
 	public SortedSet<Grid> generateMaps(RWTilesSets rwTileSets) {
 		SortedSet<Grid> maps = new TreeSet<Grid>();
+		
 		return maps;
 	}
 }
