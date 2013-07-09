@@ -23,6 +23,7 @@ public class RuneWarsGLActivity extends Activity {
 		if (hasGLES20()) {
 			mGLView = new MyGLSurfaceView(this);
 			// mGLView.setPreserveEGLContextOnPause(true);
+			setContentView(mGLView);
 			
 			 
 			
@@ -42,7 +43,6 @@ public class RuneWarsGLActivity extends Activity {
 			 .show();
 		}
 
-		setContentView(mGLView);
 
 	}
 
@@ -59,6 +59,7 @@ public class RuneWarsGLActivity extends Activity {
 		// If your OpenGL application is memory intensive,
 		// you should consider de-allocating objects that
 		// consume significant memory here.
+		if (mGLView!= null)
 		mGLView.onPause();
 	}
 
@@ -68,6 +69,7 @@ public class RuneWarsGLActivity extends Activity {
 		// The following call resumes a paused rendering thread.
 		// If you de-allocated graphic objects for onPause()
 		// this is a good place to re-allocate them.
+		if (mGLView!= null)
 		mGLView.onResume();
 	}
 }
