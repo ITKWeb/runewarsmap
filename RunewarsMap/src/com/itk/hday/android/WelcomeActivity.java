@@ -1,7 +1,7 @@
 package com.itk.hday.android;
 
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -19,35 +19,40 @@ import com.itk.hday.util.SystemUiHider;
  * @see SystemUiHider
  */
 public class WelcomeActivity extends Activity {
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-		
+
 		setContentView(R.layout.activity_welcome);
-		
+
 		final Spinner spinner = (Spinner) findViewById(R.id.nbPlayerSpinner);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, 
-				R.array.nbPlayerStringArray, 
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+				this, R.array.nbPlayerStringArray,
 				android.R.layout.simple_spinner_item);
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		spinner.setAdapter(adapter);
-		
+
 		final Button button = (Button) findViewById(R.id.validateConfigButton);
+
+		final Intent intent = new Intent(this, RuneWarsGLActivity.class);
+
 		button.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				setContentView(R.layout.runwars_gameboard);
+				startActivity(intent);
 			}
 		});
+
 	}
 
-//	@Override
-//	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		//getMenuInflater().inflate(R.menu.main, menu);
-//		return true;
-//	}
+	// @Override
+	// public boolean onCreateOptionsMenu(Menu menu) {
+	// Inflate the menu; this adds items to the action bar if it is present.
+	// getMenuInflater().inflate(R.menu.main, menu);
+	// return true;
+	// }
+
 }

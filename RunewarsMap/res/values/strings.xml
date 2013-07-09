@@ -15,5 +15,8 @@
     <string name="threePlayers">Trois joueurs</string>
     <string name="fourPlayers">Quatre joueurs</string>
     <string name="use_extension">Jouer avec l\'extension</string>
-    <string name="choose_tiles">Choisir les tuiles du plateau</string> 
+    <string name="choose_tiles">Choisir les tuiles du plateau</string>
+    
+    <string name="title_activity_runewars_grid">Plateau</string>
+    
 </resources>
