@@ -22,7 +22,7 @@ public class RuneWarsGLActivity extends Activity {
 		// as the ContentView for this Activity
 		if (hasGLES20()) {
 			mGLView = new MyGLSurfaceView(this);
-			mGLView.setPreserveEGLContextOnPause(true);
+			// mGLView.setPreserveEGLContextOnPause(true);
 			
 			 
 			
