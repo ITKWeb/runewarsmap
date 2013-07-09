@@ -22,9 +22,16 @@ public class RuneWarsGLActivity extends Activity {
 		// as the ContentView for this Activity
 		if (hasGLES20()) {
 			mGLView = new MyGLSurfaceView(this);
+<<<<<<< HEAD
+	//		mGLView.setPreserveEGLContextOnPause(true);
+
+=======
 			// mGLView.setPreserveEGLContextOnPause(true);
 			setContentView(mGLView);
-
+			
+			 
+			
+>>>>>>> 25835b8e90a222a485b108244dead0bdaf2b6b22
 		} else {
 			// Time to get a new phone, OpenGL ES 2.0 not
 			// supported.

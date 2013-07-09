@@ -44,7 +44,7 @@ public class RuneWarsGLRenderer implements Renderer {
 		GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
 
 		// Set the camera position (View matrix)
-		Matrix.setLookAtM(mVMatrix, 0, 0, 0, -30, 0f, 0f, 0f, 0f, 10.0f, 0.0f);
+		Matrix.setLookAtM(mVMatrix, 0, 0, 0, -15, 0f, 0f, 0f, 0f, 5.0f, 0.0f);
 
 		// Calculate the projection and view transformation
 		Matrix.multiplyMM(mMVPMatrix, 0, mProjMatrix, 0, mVMatrix, 0);
@@ -139,6 +139,7 @@ class Hexagon {
 	// number of coordinates per vertex in this array
 	static final int COORDS_PER_VERTEX = 3;
 	//flat hexagon
+
 	private short[] indices = { 0, 1, 2, 0, 2, 3, 0, 3, 4, 0, 4, 5, 0, 5, 6, 0 , 6, 1, 0};
 	
 	
