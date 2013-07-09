@@ -20,9 +20,6 @@ public class SuperimpositionValidator implements Validator {
 	 */
 	@Override
 	public boolean validate(Grid grid) {
-		System.out.println(grid.getCoordinates_Tiles().values().size());
-		System.out.println(grid.getRWtiles()
-				.size());
 		return grid.getCoordinates_Tiles().values().size() == grid.getRWtiles()
 				.size();
 	}

@@ -57,4 +57,11 @@ public class Grid {
 		return RWtiles;
 	}
 
+	public Object clone() {
+		Grid clone = new Grid();
+		clone.coordinates_tiles = new HashMap<Coordinates, Tile>(
+				coordinates_tiles);
+		return clone;
+	}
+
 }

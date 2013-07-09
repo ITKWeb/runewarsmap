@@ -101,4 +101,10 @@ public class RWTilesSet {
 		this.orientation = orientation;
 	}
 
+	public Object clone() {
+		RWTilesSet clone = new RWTilesSet(this.getReference(),
+				this.getRWTiles());
+		return clone;
+	}
+
 }
