@@ -36,7 +36,7 @@ public final class RWTilesSetsFactory {
 
 		} catch (Exception e) {
 			logger.log(Level.SEVERE,
-					"Impossible de créer un ensemble de tuiles à parir de : "
+					"Impossible de créer un ensemble de tuiles à partir de : "
 							+ links);
 			e.printStackTrace();
 		}

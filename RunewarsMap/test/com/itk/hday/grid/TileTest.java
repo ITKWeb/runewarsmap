@@ -30,15 +30,15 @@ public class TileTest {
 		assertTrue(ncoordinates.size() == 6);
 		Iterator<Coordinates> iterator = ncoordinates.iterator();
 		Coordinates coordinates = iterator.next();
-		assertTrue(coordinates.getFirst() == 4 && coordinates.getSecond() == 5);
-		coordinates = iterator.next();
 		assertTrue(coordinates.getFirst() == 5 && coordinates.getSecond() == 5);
+		coordinates = iterator.next();
+		assertTrue(coordinates.getFirst() == 6 && coordinates.getSecond() == 5);
 		coordinates = iterator.next();
 		assertTrue(coordinates.getFirst() == 6 && coordinates.getSecond() == 6);
 		coordinates = iterator.next();
-		assertTrue(coordinates.getFirst() == 6 && coordinates.getSecond() == 7);
-		coordinates = iterator.next();
 		assertTrue(coordinates.getFirst() == 5 && coordinates.getSecond() == 7);
+		coordinates = iterator.next();
+		assertTrue(coordinates.getFirst() == 4 && coordinates.getSecond() == 7);
 		coordinates = iterator.next();
 		assertTrue(coordinates.getFirst() == 4 && coordinates.getSecond() == 6);
 	}

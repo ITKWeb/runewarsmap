@@ -3,11 +3,11 @@
  */
 package com.itk.hday.runewars;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import com.itk.hday.runewars.RWTile;
 import com.itk.hday.runewars.RWTile.Orientation;
 import com.itk.hday.runewarsmaps.grid.Coordinates;
 
@@ -60,17 +60,22 @@ public class RWTileTest {
 		RWTile ta = new RWTile('A');
 		ta.setRelativeCoordinates(new Coordinates(0, 0));
 		assertTrue(ta.findRelativeCoordinates(Orientation.NORD).equals(
-				new Coordinates(1, 1)));
-		assertTrue(ta.findRelativeCoordinates(Orientation.SUD).equals(
-				new Coordinates(-1, -1)));
-		assertTrue(ta.findRelativeCoordinates(Orientation.NORD_EST).equals(
-				new Coordinates(0, 1)));
-		assertTrue(ta.findRelativeCoordinates(Orientation.NORD_OUEST).equals(
-				new Coordinates(1, 0)));
-		assertTrue(ta.findRelativeCoordinates(Orientation.SUD_EST).equals(
-				new Coordinates(-1, 0)));
-		assertTrue(ta.findRelativeCoordinates(Orientation.SUD_OUEST).equals(
 				new Coordinates(0, -1)));
+		assertTrue(ta.findRelativeCoordinates(Orientation.SUD).equals(
+				new Coordinates(0, 1)));
+		assertTrue(ta.findRelativeCoordinates(Orientation.NORD_EST).equals(
+				new Coordinates(1, -1)));
+		assertTrue(ta.findRelativeCoordinates(Orientation.NORD_OUEST).equals(
+				new Coordinates(-1, 0)));
+		assertTrue(ta.findRelativeCoordinates(Orientation.SUD_EST).equals(
+				new Coordinates(1, 0)));
+		assertTrue(ta.findRelativeCoordinates(Orientation.SUD_OUEST).equals(
+				new Coordinates(-1, 1)));
 	}
 
+	@Test
+	public void testgetOrientationAfterRotating() {
+		assertTrue(RWTile.getOrientationAfterRotating(Orientation.NORD, 7,
+				false).equals(Orientation.NORD_OUEST));
+	}
 }

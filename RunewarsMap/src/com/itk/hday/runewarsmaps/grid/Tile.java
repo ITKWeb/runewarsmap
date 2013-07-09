@@ -46,15 +46,15 @@ public class Tile {
 
 	public List<Coordinates> getNeigboorsCoordinates() {
 		List<Coordinates> nCoordinates = new ArrayList<Coordinates>();
-		nCoordinates.add(new Coordinates(getCoordinates().getFirst() - 1,
-				getCoordinates().getSecond() - 1));
 		nCoordinates.add(new Coordinates(getCoordinates().getFirst(),
+				getCoordinates().getSecond() - 1));
+		nCoordinates.add(new Coordinates(getCoordinates().getFirst() + 1,
 				getCoordinates().getSecond() - 1));
 		nCoordinates.add(new Coordinates(getCoordinates().getFirst() + 1,
 				getCoordinates().getSecond()));
-		nCoordinates.add(new Coordinates(getCoordinates().getFirst() + 1,
-				getCoordinates().getSecond() + 1));
 		nCoordinates.add(new Coordinates(getCoordinates().getFirst(),
+				getCoordinates().getSecond() + 1));
+		nCoordinates.add(new Coordinates(getCoordinates().getFirst() - 1,
 				getCoordinates().getSecond() + 1));
 		nCoordinates.add(new Coordinates(getCoordinates().getFirst() - 1,
 				getCoordinates().getSecond()));
@@ -66,8 +66,7 @@ public class Tile {
 		if (getRwTile() == null) {
 			rwTile = "Vide";
 		} else {
-			rwTile = String.valueOf(getRwTile().getTilesSetRef())
-					+ getRwTile().getTileRef();
+			rwTile = getRwTile().getCompletRef();
 		}
 		return "Coordonnées : " + getCoordinates().toString() + " - Tuile : "
 				+ rwTile;

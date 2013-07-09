@@ -28,7 +28,10 @@ public class RWTile {
 
 	public RWTile(char letter) {
 		setTileRef(letter);
+	}
 
+	public String getCompletRef() {
+		return getTilesSetRef() + String.valueOf(getTileRef());
 	}
 
 	public RWTile getNeighbor(Orientation orientation) {
@@ -67,17 +70,17 @@ public class RWTile {
 		Coordinates coord = getRelativeCoordinates();
 		switch (orientation) {
 		case NORD:
-			return new Coordinates(coord.getFirst() + 1, coord.getSecond() + 1);
-		case SUD:
-			return new Coordinates(coord.getFirst() - 1, coord.getSecond() - 1);
-		case NORD_EST:
-			return new Coordinates(coord.getFirst() + 1, coord.getSecond());
-		case NORD_OUEST:
-			return new Coordinates(coord.getFirst(), coord.getSecond() + 1);
-		case SUD_EST:
 			return new Coordinates(coord.getFirst(), coord.getSecond() - 1);
-		case SUD_OUEST:
+		case SUD:
+			return new Coordinates(coord.getFirst(), coord.getSecond() + 1);
+		case NORD_EST:
+			return new Coordinates(coord.getFirst() + 1, coord.getSecond() - 1);
+		case NORD_OUEST:
 			return new Coordinates(coord.getFirst() - 1, coord.getSecond());
+		case SUD_EST:
+			return new Coordinates(coord.getFirst() + 1, coord.getSecond());
+		case SUD_OUEST:
+			return new Coordinates(coord.getFirst() - 1, coord.getSecond() + 1);
 		default:
 			return null;
 		}
